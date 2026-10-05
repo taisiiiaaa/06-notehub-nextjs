@@ -12,7 +12,7 @@ import Modal from '@/components/Modal/Modal'
 import NoteForm from '@/components/NoteForm/NoteForm'
 import EmptyState from '@/components/EmptyState/EmptyState'
 
-import styles from './page.module.css'
+import styles from './Notes.module.css'
 
 const NotesClient = () => {
   const [searchInput, setSearchInput] = useState('')

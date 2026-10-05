@@ -2,7 +2,7 @@
 import { useParams } from 'next/navigation'
 import { useQuery } from '@tanstack/react-query'
 import { fetchNoteById } from '@/lib/api'
-import styles from './page.module.css'
+import styles from './NoteDetails.module.css'
 import Loader from '@/components/Loader/Loader'
 import ErrorMessage from '@/components/ErrorMessage/ErrorMessage'
 
