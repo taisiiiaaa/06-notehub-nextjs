@@ -56,29 +56,31 @@ const NotesClient = () => {
       </header>
 
       <main>
-        {isLoading && !isError && <Loader />}
+        <section>
+          {isLoading && !isError && <Loader />}
 
-        {isSuccess && data.notes.length > 0 && (
-          <div className={styles.notesContainer}>
-            <NoteList notes={data.notes} />
+          {isSuccess && data.notes.length > 0 && (
+            <div className={styles.notesContainer}>
+              <NoteList notes={data.notes} />
 
-            {isFetching && !isLoading && <Loader variant='fetching' />}
-          </div>
-        )}
+              {isFetching && !isLoading && <Loader variant='fetching' />}
+            </div>
+          )}
 
-        {isError && (
-          <ErrorMessage
-            message={error instanceof Error ? error.message : 'Failed to load notes.'}
-          />
-        )}
+          {isError && (
+            <ErrorMessage
+              message={error instanceof Error ? error.message : 'Failed to load notes.'}
+            />
+          )}
 
-        {isSuccess && data.notes.length === 0 && <EmptyState searchQuery={searchQuery} />}
+          {isSuccess && data.notes.length === 0 && <EmptyState searchQuery={searchQuery} />}
 
-        {isModalVisible && (
-          <Modal onClose={() => setIsModalVisible(false)}>
-            <NoteForm onClose={() => setIsModalVisible(false)} />
-          </Modal>
-        )}
+          {isModalVisible && (
+            <Modal onClose={() => setIsModalVisible(false)}>
+              <NoteForm onClose={() => setIsModalVisible(false)} />
+            </Modal>
+          )}
+        </section>
       </main>
     </div>
   )

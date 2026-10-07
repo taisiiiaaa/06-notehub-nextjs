@@ -21,15 +21,17 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html lang='en' className={inter.variable}>
-      <TanStackProvider>
-        <body>
+      <body>
+        <TanStackProvider>
           <Header />
 
           <main>{children}</main>
 
           <Footer />
-        </body>
-      </TanStackProvider>
+
+          <div id='modal-root' />
+        </TanStackProvider>
+      </body>
     </html>
   )
 }
